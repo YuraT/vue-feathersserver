@@ -36,6 +36,8 @@ export default {
       }).then((stuffs) => {
         // Logged in
         console.log(stuffs)
+        this.email = ''
+        this.password = ''
       }).catch(e => {
         // Show login page (potentially with `e.message`)
         console.error('Authentication error', e);
