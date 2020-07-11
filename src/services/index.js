@@ -14,7 +14,6 @@ client.configure(auth({
 
 export {client};
 export const messageService = client.service('messages');
-export const testtextService = client.service('testtext');
 
 client.reAuthenticate().then((obj) => {
   console.log(obj)

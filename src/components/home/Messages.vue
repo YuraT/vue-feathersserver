@@ -13,7 +13,6 @@
         <span @click="tryRemoveMessage(message)">x</span>
       </li>
     </ul>
-    <p>{{ testtext.text }}</p>
   </div>
 </template>
 
@@ -26,7 +25,6 @@ export default {
     return {
       messages: [],
       newMessage: "",
-      testtext: {}
     };
   },
   methods: {
@@ -38,12 +36,6 @@ export default {
       }).catch(e => {
         console.log("fetchMessages error: ", e)
       });
-      services.testtextService.find({}).then((data) => {
-        console.log("testtext: ",data);
-        this.testtext = data;
-      }).catch(e => {
-        console.log("testtexterror", e);
-      })
     },
     tryAddMessage() {
       services.messageService.create({
